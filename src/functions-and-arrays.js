@@ -41,14 +41,19 @@ it should return the first occurrence.*/
 const numbers = [6, 12, 1, 18, 13, 16, 2, 1, 8, 10];
 
 function sumNumbers(arr1) {
-  const reducer = (previousValue, currentValue) => previousValue + currentValue;
-
+  let total = 0
   if (!arr1.length) {return 0}
-  if (arr1.length = 1) {return arr1[0]}
-  return arr1.reduce(reducer)
+  if (arr1.length === 1) {return arr1[0]}
+
+  for (i = 0; i < arr1.length; i++) {
+    total = total + arr1[i]
+  }
+
+  return total
 }
   
 sumNumbers (numbers)
+
 
 // Iteration #3.1 Bonus:
 function sum() {}
@@ -119,9 +124,7 @@ function uniquifyArray(arrSort) {
     if (arrSort.length == sortedArray.length) {
       return arrSort
     }
-    if (arrSort.length != sortedArray.length) {
-      return sortedArray
-    }
+
     
   }
 
@@ -173,9 +176,9 @@ function howManyTimes(arrCounter, wordToSearch) {
     }
   }
 
-  if (wordRepeats === 0) {return 0}
-  if (wordRepeats === 1) {return 1}
-  if (wordRepeats === 5) {return 5}
+  if (wordRepeats === 0) {return wordRepeats}
+  if (wordRepeats === 1) {return wordRepeats}
+  if (wordRepeats === 5) {return wordRepeats}
   }
 
 howManyTimes(wordsCount, "trouble")
